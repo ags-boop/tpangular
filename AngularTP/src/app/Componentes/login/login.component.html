@@ -1,0 +1,17 @@
+<div class="login">
+    <form [formGroup]="userlog" (ngSubmit)="IsValid()" class="custom-form">
+        <h1>Welcome</h1>
+        <input type="text" formControlName="UserLog" name="User" placeholder="User" required />
+        <input type="password" formControlName="PasswordLog" name="Password" placeholder="Password" required />
+
+        <div *ngIf="Controllers.UserLog.errors?.pattern || Controllers.PasswordLog.errors?.pattern">
+            <input hidden type="submit" value="Login"/>        
+        </div>
+
+        <div *ngIf="Controllers.UserLog.valid && Controllers.PasswordLog.valid">
+            <input show type="submit" value="Login"/>        
+        </div>
+  </form>
+
+</div>
+
