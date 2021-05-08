@@ -4,11 +4,15 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './Componentes/login/login.component';
+import { NavBarComponent } from './Componentes/nav-bar/nav-bar.component';
+import { CuentaclienteComponent } from './Componentes/cuentacliente/cuentacliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    NavBarComponent,
+    CuentaclienteComponent
   ],
   imports: [
     BrowserModule,

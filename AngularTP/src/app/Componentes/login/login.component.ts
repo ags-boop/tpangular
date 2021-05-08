@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit,Input} from '@angular/core';
 import {User} from 'src/app/Models/User';
 import {UserLogin} from 'src/app/Models/User-Login';
 import { NgForm,FormControl,FormGroup,Validators } from '@angular/forms';
@@ -13,14 +13,14 @@ export class LoginComponent implements OnInit {
 
   CorrectUser:string = 'superadmin'
   CorrectPassword:string = '123'
-  // UserRoot:User = {
-  //   ID:1,
-  //   User:'superadmin',
-  //   Password:'Azerty?.123',
-  //   Email:'testaagustin8@gmail.com',
-  //   Nombre:'Agustin',
-  //   apellido:'Testa',
-  // };
+  UserRoot:User = {
+    ID:1,
+    User:this.CorrectUser,
+    Password:this.  CorrectPassword,
+    Email:'testaagustin8@gmail.com',
+    Nombre:'Agustin',
+    Apellido:'Testa',
+  };
 
   userlog:FormGroup;
 
@@ -61,7 +61,7 @@ export class LoginComponent implements OnInit {
 
   IsValid() {
     if (this.userlog.valid) {
-      alert('u in')
+      this.route.navigateByUrl("navbar")
       
       //TODO
     }
