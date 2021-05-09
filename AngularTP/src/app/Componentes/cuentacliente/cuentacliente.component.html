@@ -1,1 +1,40 @@
 <app-nav-bar></app-nav-bar>
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="registration-form">
+        <form (ngSubmit)="onUpdate(f)" #f="ngForm">
+            <div class="form-icon">
+                <span><i class="fas fa-users"></i></span>
+            </div>
+            <div class="form-group">
+                <input type="number" [ngModel]="UserRoot.ID" class="form-control item" name="ID" placeholder="ID" readonly>
+            </div>
+            <div class="form-group">
+                <input type="text" [ngModel]="UserRoot.User" class="form-control item" name="user" placeholder="User">
+            </div>
+            <div class="form-group">
+                <input type="password" [ngModel]="UserRoot.Password" class="form-control item" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="email" [ngModel]="UserRoot.Email" class="form-control item" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input type="text" [ngModel]="UserRoot.Nombre" class="form-control item" name="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+                <input type="text" [ngModel]="UserRoot.Apellido" class="form-control item" name="apellido" placeholder="Apellido">
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-block create-account" value="Modificar Datos">
+            </div>
+        </form>
+        <div class="social-media">
+            <h5>Agustin Testa GitHub <3</h5>
+            <div class="">
+                <a class="fab fa-github" href="https://github.com/ags-boop"><i class="icon-social-facebook" title="My-GitHub"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -12,8 +12,6 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
      this.CurrentUserInBar = this.router.snapshot.paramMap.get("usuario")!;
-     console.log(this.CurrentUserInBar);
-
   }
 
 }

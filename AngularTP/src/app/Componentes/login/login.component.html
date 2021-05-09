@@ -3,7 +3,6 @@
     <form [formGroup]="userlog" (ngSubmit)="IsValid()" class="custom-form">
         <h1>Welcome</h1>
         <input type="text" formControlName="UserLog" name="User" placeholder="User" required />
-        <app-nav-bar hidden [CurrentUserInBar]=Controllers.UserLog.value></app-nav-bar> 
         <input type="password" formControlName="PasswordLog" name="Password" placeholder="Password" required />
 
         <div *ngIf="Controllers.UserLog.errors?.pattern || Controllers.PasswordLog.errors?.pattern">

@@ -3,6 +3,7 @@ import {User} from 'src/app/Models/User';
 import {UserLogin} from 'src/app/Models/User-Login';
 import { NgForm,FormControl,FormGroup,Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ClienteServiceService } from 'src/app/Services/cliente-service.service';
 
 @Component({
   selector: 'app-login',
@@ -10,52 +11,28 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  CorrectUser:string = 'superadmin'
-  CorrectPassword:string = '123'
-  UserRoot:User = {
-    ID:1,
-    User:this.CorrectUser,
-    Password:this.  CorrectPassword,
-    Email:'testaagustin8@gmail.com',
-    Nombre:'Agustin',
-    Apellido:'Testa',
-  };
-
   userlog:FormGroup;
+  moduser:any;
+  modpassword:any;
 
-  currentuser:UserLogin = {
-    UserLogin:'',
-    PasswordLogin: '',
-  };
-
-  constructor(private route: Router, private router: ActivatedRoute) { 
+  constructor(private route: Router, private router: ActivatedRoute,private UserService:ClienteServiceService) { 
+    UserService.UserRoot.forEach(element => {
+      this.moduser=element.User
+      this.modpassword = element.Password
+    });
+    console.log(this.moduser)
+    console.log(this.modpassword)
     this.userlog = new FormGroup({
-      UserLog: new FormControl('', Validators.pattern(this.CorrectUser)),
-      PasswordLog: new FormControl('', Validators.pattern(this.CorrectPassword)),
+      UserLog: new FormControl('', Validators.pattern(this.moduser)),
+      PasswordLog: new FormControl('', Validators.pattern(this.modpassword)),
     })
   }
 
   ngOnInit(): void {
-
-  }
-
-  onLogin(form: NgForm){
-     let CurrentAdmin : UserLogin = {
-      UserLogin:form.value.User,
-      PasswordLogin:form.value.Password,
-    }
-    if(CurrentAdmin.UserLogin == this.CorrectUser && CurrentAdmin.PasswordLogin == this.CorrectPassword){
-      alert('u in ')
-      console.log(CurrentAdmin.UserLogin)
-      console.log(CurrentAdmin.PasswordLogin)
       
-    }
-    else
-    alert('Credenciales Incorrectas');
   }
 
-   get Controllers (){
+  get Controllers (){
     return this.userlog.controls;
   }
 
@@ -63,7 +40,6 @@ export class LoginComponent implements OnInit {
     if (this.userlog.valid) {
       this.route.navigateByUrl("navbar")
       
-      //TODO
     }
     else 
       alert('not in')

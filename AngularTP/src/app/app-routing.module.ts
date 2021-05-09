@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Componentes/login/login.component';
 import { NavBarComponent } from './Componentes/nav-bar/nav-bar.component';
+import { CuentaclienteComponent } from './Componentes/cuentacliente/cuentacliente.component';
+
 const routes: Routes = [
   {
     path:'',
@@ -10,6 +12,10 @@ const routes: Routes = [
   {
     path:'navbar/:usuario',
     component:NavBarComponent
+  },
+  {
+    path:'cuentacliente/:userId',
+    component:CuentaclienteComponent
   },
 ];
 
