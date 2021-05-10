@@ -15,15 +15,38 @@
                     <th>Definicion Mensual</th>
                 </tr>
             </thead>
-            <tbody >
-                <tr *ngFor="let d of receiveddata; let i = index;">
-                    <td>{{d.tipoPeriodo}}</td>
-                    <td>{{d.limite}}</td>
-                    <td>{{d.definicionDiaria}}</td>
-                    <td>{{d.limiteSemanal}}</td>
-                    <td>{{d.definicionSemanal}}</td>
-                    <td>{{d.limiteMensual}}</td>
-                    <td>{{d.definicionMensual}}</td>
+            <tbody *ngFor="let d of receiveddata; let i = index;" >
+                <tr *ngIf="d.tipoPeriodo == 1">
+                        <td>{{d.pasajeroId}}</td>
+                        <td>{{d.limite}}</td>
+                        <td>{{d.definicionDiaria}}</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                </tr>
+            </tbody>
+            <tbody *ngFor="let d of receiveddata; let i = index;" >
+                <tr *ngIf="d.tipoPeriodo == 2">
+                        <td>{{d.pasajeroId}}</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>{{d.limite}}</td>
+                        <td>{{d.definicionSemanal}}</td>
+                        <td>-</td>
+                        <td>-</td>
+                </tr>
+            </tbody>
+            <tbody *ngFor="let d of receiveddata; let i = index;" >
+                <tr *ngIf="d.tipoPeriodo == 3">
+                        <td>{{d.pasajeroId}}</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>{{d.limite}}</td>
+                        <td>{{d.definicionMensual}}</td>
+                </tr>
             </tbody>
         </table>
       </div>
