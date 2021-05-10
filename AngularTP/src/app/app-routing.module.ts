@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './Componentes/login/login.component';
 import { NavBarComponent } from './Componentes/nav-bar/nav-bar.component';
 import { CuentaclienteComponent } from './Componentes/cuentacliente/cuentacliente.component';
+import { AccederMediosComponent } from './Componentes/acceder-medios/acceder-medios.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:'cuentacliente/:userId',
     component:CuentaclienteComponent
+  },
+  {
+    path:'accedermedios/:user',
+    component:AccederMediosComponent
   },
 ];
 

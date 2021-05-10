@@ -1,0 +1,34 @@
+<app-nav-bar></app-nav-bar>
+<h5> CurrentUser: {{CurrentUserInBar}}</h5>
+<div  class="content-container">
+    <div class="container-fluid">
+      <div>
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>PasajeroId</th>
+                    <th>Limete Diario</th>
+                    <th>Definicion Diaria</th>
+                    <th>Limite Semanal</th>
+                    <th>Definicion Semanal</th>
+                    <th>Limite Mensual</th>
+                    <th>Definicion Mensual</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let d of receiveddata; let i = index;">
+                    <td>{{d.tipoPeriodo}}</td>
+                    <td>{{d.limite}}</td>
+                    <td>{{d.definicionDiaria}}</td>
+                    <td>{{d.limiteSemanal}}</td>
+                    <td>{{d.definicionSemanal}}</td>
+                    <td>{{d.limiteMensual}}</td>
+                    <td>{{d.definicionMensual}}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+
+<!-- {{receiveddata|json}} -->

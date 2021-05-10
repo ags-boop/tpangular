@@ -44,6 +44,7 @@ export class CuentaclienteComponent implements OnInit {
       Apellido:form.value.apellido,
     }
     this.UserService.onUpdate(UserUpdate);
+    alert('Se cerrara la sesion y podra iniciar con los nuevos cambios')
     this.route.navigateByUrl('')
   }
 }
