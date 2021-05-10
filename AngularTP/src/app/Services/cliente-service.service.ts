@@ -8,7 +8,7 @@ export class ClienteServiceService {
 
 
   CorrectUser:string = 'superadmin'
-  CorrectPassword:string = '123'
+  CorrectPassword:string = 'Azerty?.123'
 
   UserRoot : User [] = [
     {
