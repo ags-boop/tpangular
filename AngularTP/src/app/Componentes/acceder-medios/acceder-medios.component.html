@@ -1,8 +1,7 @@
 <app-nav-bar></app-nav-bar>
-<h5> CurrentUser: {{CurrentUserInBar}}</h5>
+<h5> Lista De Tarifas</h5>
 <div  class="content-container">
     <div class="container-fluid">
-      <div>
         <table class="table table-striped">
             <thead class="thead-light">
                 <tr>
@@ -15,42 +14,20 @@
                     <th>Definicion Mensual</th>
                 </tr>
             </thead>
-            <tbody *ngFor="let d of receiveddata; let i = index;" >
-                <tr *ngIf="d.tipoPeriodo == 1">
-                        <td>{{d.pasajeroId}}</td>
-                        <td>{{d.limite}}</td>
-                        <td>{{d.definicionDiaria}}</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                </tr>
-            </tbody>
-            <tbody *ngFor="let d of receiveddata; let i = index;" >
-                <tr *ngIf="d.tipoPeriodo == 2">
-                        <td>{{d.pasajeroId}}</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>{{d.limite}}</td>
-                        <td>{{d.definicionSemanal}}</td>
-                        <td>-</td>
-                        <td>-</td>
-                </tr>
-            </tbody>
-            <tbody *ngFor="let d of receiveddata; let i = index;" >
-                <tr *ngIf="d.tipoPeriodo == 3">
-                        <td>{{d.pasajeroId}}</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>{{d.limite}}</td>
-                        <td>{{d.definicionMensual}}</td>
+            <tbody *ngFor="let d of receiveddata; let i = index;">
+                <tr [ngSwitch]="d.tipoPeriodo">
+                    <td *ngSwitchCase='1'>Pasajero Id - {{d.pasajeroId}}</td>
+                    <td *ngSwitchCase='1'>{{d.limite}}</td>
+                    <td *ngSwitchCase='1'>{{d.definicionDiaria}}</td>
+                    <td *ngSwitchCase='2'>{{d.limite}}</td>
+                    <td *ngSwitchCase='2'>{{d.definicionSemanal}}</td>
+                    <td *ngSwitchCase='3'>{{d.limite}}</td> 
+                    <td *ngSwitchCase='3'>{{d.definicionMensual}}</td>
                 </tr>
             </tbody>
         </table>
-      </div>
     </div>
 </div>
 
 <!-- {{receiveddata|json}} -->
+

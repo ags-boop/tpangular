@@ -16,15 +16,16 @@ export class LoginComponent implements OnInit {
   modpassword:any;
 
   constructor(private route: Router, private router: ActivatedRoute,private UserService:ClienteServiceService) { 
-    UserService.UserRoot.forEach(element => {
+    this.UserService.UserRoot.forEach(element => {
       this.moduser=element.User
       this.modpassword = element.Password
+      // Validators.pattern('[A-Za-z0-9!?.-]{1,20}')
     });
     console.log(this.moduser)
     console.log(this.modpassword)
     this.userlog = new FormGroup({
       UserLog: new FormControl('', Validators.pattern(this.moduser)),
-      PasswordLog: new FormControl('', Validators.pattern(this.modpassword)),
+      PasswordLog: new FormControl('', [Validators.pattern('[A-Za-z0-9!?.-]{1,20}')]),
     })
   }
 
@@ -37,12 +38,11 @@ export class LoginComponent implements OnInit {
   }
 
   IsValid() {
-    if (this.userlog.valid) {
+    if (this.userlog.valid && this.Controllers.PasswordLog.value === this.modpassword) {
       this.route.navigateByUrl("navbar")
-      
     }
     else 
-      alert('not in')
+      alert('Credenciales incorrectas')
   }
 
 }

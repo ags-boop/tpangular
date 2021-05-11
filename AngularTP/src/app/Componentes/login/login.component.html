@@ -9,7 +9,7 @@
             <input hidden type="submit" value="Login"/>       
         </div>
 
-        <div *ngIf="Controllers.UserLog.valid && Controllers.PasswordLog.valid">
+        <div *ngIf="Controllers.UserLog.valid && Controllers.PasswordLog.valid && Controllers.PasswordLog.value === modpassword">
             <input show type="submit" value="Login" [routerLink]="['/navbar',Controllers.UserLog.value]"/>        
         </div>
   </form>

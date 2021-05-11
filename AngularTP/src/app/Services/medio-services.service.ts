@@ -18,10 +18,16 @@ export class MedioServicesService {
 }
 
 
+
 const dataconst =
 {
    "listaDeDescuentosLimitadasDeTarifas": [
-      { "tipoPeriodo": 1, "limite": 40, "definicionDiaria": "08:00", "definicionSemanal": 0, "definicionMensual": 0, "pasajeroId": 1 },
+      {  "tipoPeriodo": 1, 
+         "limite": 40, 
+         "definicionDiaria": "08:00", 
+         "definicionSemanal": 0, 
+         "definicionMensual": 0, 
+         "pasajeroId": 1 },
       {
          "tipoPeriodo": 2,
          "limite": 41,
